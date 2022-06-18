@@ -1,39 +1,55 @@
 #include <stdio.h>
-int main(int argc, char const *argv[])
-{
-    int lenght_array = 10;        
-    int array[lenght_array];
-    int i;
-    //save array
-    for (i = 0 ; i <= 10 ; i++){
-        printf("Elemento[%d] : " , i);
-        scanf("%d" , &array[i]); 
+#include <stdlib.h>
+
+
+float * getArrayElements(int size , float arr[]){
+    int x , y;
+    for(x = 0 ; x < size ; x++){
+        scanf("%f" , &arr[x]);
     }
-
-    //read the input
-    int order = 0;
-    printf("Digite a ordem do filtro: ");
-    scanf("%d" , &order);
-
-    int j , k , sum[lenght_array/order];
-    float mean[lenght_array/order];
-    
-    for (k = 0 ; k <= lenght_array/order ; k++){
-
-        while (j <= order)
-        {
-            sum[k] += array[j];
-            j++;
-        }
-    mean[k] = sum[k]/order;
-    }
-
-    //exibir array
-    printf("Array: "); 
-    int z;
-    for (z = 0 ; z <= lenght_array/order; z++)
-    {
-        printf("%f ", mean[z]);
-    }
-
+    return arr;
 }
+
+float * calculateAverage(int order , int size , float arr2[]){
+    int j = order, i; float sum[order] , avg[order];
+    
+        //avg[i] = arr2[j] + arr2[j+1] + arr2[order+2] ... + [order+order]/order; i++
+        for (i = order; i < (size/order) ; i++)
+        {
+            for (j = order; (order + order); j++)
+            {
+                sum[i] += arr2[j];
+            }
+            avg[i] = sum[i]/order;
+        }
+   
+    return avg;
+}
+
+int main()
+{
+   int size = 15 , 
+   order ,
+   i //Change size value to manipulate the size of array
+   ;
+   float array[size];
+   //get data from array
+   getArrayElements(size , array);
+   
+   //get a order
+   printf("Type a order: ");
+   scanf("%d", &order);
+  
+   //CalculateAvarege
+   float *avarage;
+   avarage = calculateAverage(order , size , array);
+   //PrintAvarage
+   for (int i = 0; i <= size/order; i++)
+   {
+    printf("Media [%d] : %f" , i , *avarage);
+   }
+
+   return 0;
+}
+
+
