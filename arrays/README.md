@@ -11,6 +11,18 @@ type c[n] ;
 Examples:
 int integerNum[12] = { 1 , 2, 3 , 4 ,5 ,6 ,7, 8, 9 , 10, 11 , 12 } // create an Array with 12 elements of int type
 
+### Inicializate 
+
+Arrays can be declared and later initialized or initialized with an "initializer list".
+
+### Set the size of each array as a symbolic constant
+ 
+
+Syntax: 
+
+#define CONSTANT value
+
+This will make your programs more scalable
 
 ### Footer notes
 
