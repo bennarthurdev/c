@@ -1,5 +1,15 @@
 #include <stdio.h>
 
+int fat(int num)
+{
+    if(num=0){
+        return 1;
+    }
+    else{
+        return num*fat(num-1);
+    }
+}
+
 int powWithFor(int i , int expo){
     /*
     *receive an integer and your expoent
