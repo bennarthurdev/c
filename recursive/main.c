@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+//factorial function
 int fat(int num)
 {
     if(num=0){
